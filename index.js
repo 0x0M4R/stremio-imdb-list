@@ -1,6 +1,18 @@
 
-const express = require('express')
-const app = express()
+const express = require("express");
+
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+});
+
+app.listen(5000, () => {
+  console.log("Running on port 5000.");
+});
+
+// Export the Express API
+module.exports = app;
 const cors = require('cors')
 const qs = require('querystring')
 
@@ -8,21 +20,21 @@ app.use(cors())
 
 const manifest = {
 	id: 'org.imdblist',
-	version: '0.0.2',
-	name: 'IMDB List Add-on',
+	version: '0.0.3',
+	name: 'IMDB List Add-on 1',
 	description: 'Add-on to create a catalog from IMDB lists.',
 	resources: ['catalog'],
 	types: ['movie', 'series'],
 	catalogs: [
 		{
-			id: 'imdb-movie-list',
-			name: 'IMDB Movie List',
+			id: 'imdb-movie-list1',
+			name: 'imdb want-to-watch',
 			type: 'movie',
 			genres: ["Action", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "Film Noir", "History", "Horror", "Music", "Musical", "Mystery", "Romance", "Sci-Fi", "Short Film", "Sport", "Superhero", "Thriller", "War", "Western"],
 			extra: [{ name: 'skip' },{ name: 'genre' }]
 		}, {
-			id: 'imdb-series-list',
-			name: 'IMDB Series List',
+			id: 'imdb-series-list1',
+			name: 'imdb want-to-watch',
 			type: 'series',
 			genres: ["Action", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "Film Noir", "History", "Horror", "Music", "Musical", "Mystery", "Romance", "Sci-Fi", "Short Film", "Sport", "Superhero", "Thriller", "War", "Western"],
 			extra: [{ name: 'skip' },{ name: 'genre' }]
