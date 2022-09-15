@@ -4,8 +4,7 @@
 	"description": "Add-on to create a Stremio catalog from a IMDB list.",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js",
-		"live": "nodemon server.js" 
+		"start": "node server.js"
 	},
 	"dependencies": {
 		"needle": "^2.2.4",
